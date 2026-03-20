@@ -5,54 +5,99 @@
 
 <style>
 
-/* -------- FIRST SECTION STYLE (HTML TAGS) -------- */
+/* -------- GENERAL PAGE STYLE -------- */
 
 body{
-font-family: Arial;
-background:#f4f6f9;
+font-family:"Segoe UI", Arial, sans-serif;
+background:linear-gradient(to right,#ffffff,#e8f4ff);
+margin:0;
 padding:40px;
 line-height:1.6;
+color:#333;
 }
 
+
+/* -------- HTML TAGS SECTION -------- */
+
 .section1{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+background:#ffffff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
 margin-bottom:40px;
+transition:0.3s;
+}
+
+.section1:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 18px rgba(0,0,0,0.2);
 }
 
 .section1 h1{
+color:#0066cc;
+border-bottom:3px solid #00a8cc;
+padding-bottom:10px;
+}
+
+.section1 h2,h3,h5,h6{
 color:#2c3e50;
 }
 
+
+/* -------- LINKS -------- */
+
 .section1 a{
-color:#1e90ff;
+color:#0077cc;
 font-weight:bold;
 text-decoration:none;
 }
 
 .section1 a:hover{
-color:#e74c3c;
+color:#ff6600;
 text-decoration:underline;
 }
 
 
-/* -------- SECOND SECTION STYLE (FORM COMPONENTS) -------- */
+/* -------- LISTS -------- */
+
+ol,ul{
+margin-left:25px;
+}
+
+ul{
+list-style-type:square;
+}
+
+
+/* -------- SEPARATOR LINE -------- */
+
+hr{
+border:none;
+height:2px;
+background:#e0e0e0;
+margin:30px 0;
+}
+
+
+/* -------- FORM COMPONENT SECTION -------- */
 
 .container{
-width:600px;
+width:650px;
 margin:auto;
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+background:#ffffff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
 .container h1{
 text-align:center;
-color:#2c3e50;
+color:#0066cc;
+margin-bottom:20px;
 }
+
+
+/* -------- DEFINITION LIST -------- */
 
 dt{
 font-weight:bold;
@@ -66,13 +111,70 @@ color:#555;
 }
 
 .example{
-margin-top:5px;
+margin-top:6px;
 }
 
-input,textarea,button{
-padding:8px;
+
+/* -------- INPUT FIELDS -------- */
+
+input,textarea{
+padding:10px;
 border:1px solid #ccc;
-border-radius:5px;
+border-radius:6px;
+margin-top:5px;
+transition:0.3s;
+}
+
+input:focus,textarea:focus{
+border-color:#0066cc;
+outline:none;
+box-shadow:0 0 5px rgba(0,102,204,0.3);
+}
+
+
+/* -------- BUTTON STYLE -------- */
+
+button,input[type="submit"],input[type="reset"]{
+padding:10px 15px;
+border:none;
+border-radius:6px;
+background:linear-gradient(90deg,#ff7b00,#ffb703);
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+transition:0.3s;
+}
+
+button:hover,input[type="submit"]:hover,input[type="reset"]:hover{
+background:linear-gradient(90deg,#e66a00,#ffa200);
+}
+
+
+/* -------- OPTIONAL TABLE STYLE -------- */
+
+table{
+width:70%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th{
+background:#0066cc;
+color:white;
+}
+
+th,td{
+padding:10px;
+text-align:left;
+}
+
+tr:nth-child(even){
+background:#f2f7ff;
 }
 
 </style>
@@ -91,31 +193,16 @@ border-radius:5px;
 
 <p>
 The <b>&lt;a&gt;</b> tag is used to create hyperlinks that connect a web page 
-to another section on the same web page, or to another web page. It can also 
-be used to allow users to download files. The <b>href</b> attribute specifies 
-the destination where the user will be taken after clicking the link.
+to another section on the same web page, or to another web page.
 </p>
-
-<h5>General Syntax of a Tag</h5>
 
 <p>
 &lt;a href="destination"&gt;Target Destination&lt;/a&gt;
 </p>
 
-<p>
-Task: Create a link that when clicked will take the user to the HTML 
-documentation on anchor tag. Link name should be <b>HTML Element</b>.
-</p>
-
 <a href="https://html.com/tags/a/" target="_blank">HTML Element</a>
 
 <hr>
-
-<p>
-A list is a sequence of items arranged in a particular order. HTML organizes
-content into ordered lists, unordered lists, or definition lists to make
-information clear and easy to read.
-</p>
 
 <p>Types of lists in HTML:</p>
 
@@ -127,18 +214,6 @@ information clear and easy to read.
 
 <h5>Ordered List</h5>
 
-<p>
-In an ordered list, items are labeled using numbers or letters such as
-A, B, C or Roman numerals.
-</p>
-
-<ol>
-<li>Item 1</li>
-<li>Item 2</li>
-</ol>
-
-<p><b>Task: Create a list of 5 common HTML tags</b></p>
-
 <ol>
 <li>Anchor tag</li>
 <li>Form tag</li>
@@ -149,11 +224,7 @@ A, B, C or Roman numerals.
 
 <h6>Unordered List</h6>
 
-<p>It uses bullets instead of numbering items.</p>
-
-<p><b>Task: Create a list of least favorite tags</b></p>
-
-<ul type="square">
+<ul>
 <li>img</li>
 <li>table</li>
 <li>form</li>
@@ -188,6 +259,7 @@ that run over the internet.
 
 <dt>Form Tag</dt>
 <dd>Used to create a form that collects user input.</dd>
+
 <dd class="example">
 <form>
 <input type="text" placeholder="Enter your name">
@@ -196,6 +268,7 @@ that run over the internet.
 
 <dt>Label</dt>
 <dd>Provides a description for an input field.</dd>
+
 <dd class="example">
 <label>Email:</label>
 <input type="email">
@@ -203,12 +276,14 @@ that run over the internet.
 
 <dt>Input Field</dt>
 <dd>Allows users to enter information such as text or password.</dd>
+
 <dd class="example">
 <input type="text" placeholder="Username">
 </dd>
 
 <dt>Radio Button</dt>
 <dd>Allows a user to choose one option from multiple choices.</dd>
+
 <dd class="example">
 <input type="radio" name="gender"> Male
 <input type="radio" name="gender"> Female
@@ -216,18 +291,21 @@ that run over the internet.
 
 <dt>Textarea</dt>
 <dd>Allows the user to enter longer text such as comments.</dd>
+
 <dd class="example">
 <textarea rows="3" cols="30"></textarea>
 </dd>
 
 <dt>Submit Button</dt>
 <dd>Sends form data to the server.</dd>
+
 <dd class="example">
 <input type="submit" value="Submit">
 </dd>
 
 <dt>Reset Button</dt>
 <dd>Clears all the entered data in the form.</dd>
+
 <dd class="example">
 <input type="reset" value="Clear">
 </dd>
